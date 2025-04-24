@@ -1,0 +1,202 @@
+/* 扫雷游戏样式 */
+.minesweeper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* 控制面板样式 */
+.control-panel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 2px solid #999;
+  border-radius: 4px;
+}
+
+.mines-counter, .timer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  background-color: #222;
+  color: #f00;
+  border-radius: 4px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.game-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.reset-button {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #999;
+  border-radius: 4px;
+  background-color: #ddd;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-button:hover {
+  background-color: #ccc;
+}
+
+/* 难度选择器样式 */
+.difficulty-selector {
+  position: relative;
+}
+
+.difficulty-button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: #ddd;
+  border: 2px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.difficulty-button:hover {
+  background-color: #ccc;
+}
+
+.difficulty-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 2px solid #999;
+  border-radius: 4px;
+  display: none;
+  flex-direction: column;
+  min-width: 100px;
+  z-index: 10;
+}
+
+.difficulty-menu.show {
+  display: flex;
+}
+
+.difficulty-menu button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  text-align: left;
+}
+
+.difficulty-menu button:last-child {
+  border-bottom: none;
+}
+
+.difficulty-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+.difficulty-menu button.active {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+/* 游戏板样式 */
+.game-board {
+  display: grid;
+  grid-gap: 1px;
+  background-color: #999;
+  border: 3px solid #999;
+  border-radius: 4px;
+}
+
+/* 单元格样式 */
+.cell {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.cell.hidden {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.cell.hidden:hover {
+  background-color: #ccc;
+}
+
+.cell.revealed {
+  background-color: #f0f0f0;
+}
+
+.cell.flagged {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.cell.flagged:hover {
+  background-color: #ccc;
+}
+
+/* 数字颜色 */
+.cell.revealed.one {
+  color: blue;
+}
+
+.cell.revealed.two {
+  color: green;
+}
+
+.cell.revealed.three {
+  color: red;
+}
+
+.cell.revealed.four {
+  color: darkblue;
+}
+
+.cell.revealed.five {
+  color: darkred;
+}
+
+.cell.revealed.six {
+  color: teal;
+}
+
+.cell.revealed.seven {
+  color: black;
+}
+
+.cell.revealed.eight {
+  color: gray;
+}
+
+/* 地雷样式 */
+.cell.revealed.mine {
+  background-color: #f0f0f0;
+}
+
+.cell.revealed.mine.exploded {
+  background-color: #f88;
+}
+
+/* 错误标记样式 */
+.cell.flagged.wrong {
+  background-color: #fcc;
+}

@@ -8,3 +8,6 @@ pub use navbar::Navbar;
 
 mod echo;
 pub use echo::Echo;
+
+mod minesweeper;
+pub use minesweeper::Minesweeper;

@@ -1,7 +1,7 @@
 use dioxus::prelude::*;
 
 use ui::Navbar;
-use views::{Blog, Home};
+use views::{Blog, Home, MinesweeperView};
 
 mod views;
 
@@ -13,6 +13,8 @@ enum Route {
     Home {},
     #[route("/blog/:id")]
     Blog { id: i32 },
+    #[route("/minesweeper")]
+    MinesweeperView {},
 }
 
 const MAIN_CSS: Asset = asset!("/assets/main.css");
@@ -39,14 +41,9 @@ fn App() -> Element {
 fn DesktopNavbar() -> Element {
     rsx! {
         Navbar {
-            Link {
-                to: Route::Home {},
-                "Home"
-            }
-            Link {
-                to: Route::Blog { id: 1 },
-                "Blog"
-            }
+            Link { to: Route::Home {}, "Home" }
+            Link { to: Route::Blog { id: 1 }, "Blog" }
+            Link { to: Route::MinesweeperView {}, "扫雷游戏" }
         }
 
         Outlet::<Route> {}

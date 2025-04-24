@@ -6,3 +6,5 @@ edition = "2021"
 [dependencies]
 dioxus = { workspace = true }
 api = { workspace = true }
+
+fastrand = "2.0.0"

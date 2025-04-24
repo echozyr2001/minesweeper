@@ -5012,6 +5012,7 @@ version = "0.1.0"
 dependencies = [
  "api",
  "dioxus",
+ "fastrand",
 ]
 
 [[package]]
