@@ -1,19 +1,13 @@
 use dioxus::prelude::*;
 
-use ui::Navbar;
-use views::{Blog, Home, MinesweeperView};
+use views::MinesweeperView;
 
 mod views;
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 #[rustfmt::skip]
 enum Route {
-    #[layout(DesktopNavbar)]
     #[route("/")]
-    Home {},
-    #[route("/blog/:id")]
-    Blog { id: i32 },
-    #[route("/minesweeper")]
     MinesweeperView {},
 }
 
@@ -32,20 +26,5 @@ fn App() -> Element {
         document::Link { rel: "stylesheet", href: MAIN_CSS }
 
         Router::<Route> {}
-    }
-}
-
-/// A desktop-specific Router around the shared `Navbar` component
-/// which allows us to use the desktop-specific `Route` enum.
-#[component]
-fn DesktopNavbar() -> Element {
-    rsx! {
-        Navbar {
-            Link { to: Route::Home {}, "Home" }
-            Link { to: Route::Blog { id: 1 }, "Blog" }
-            Link { to: Route::MinesweeperView {}, "扫雷游戏" }
-        }
-
-        Outlet::<Route> {}
     }
 }

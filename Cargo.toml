@@ -1,12 +1,6 @@
 [workspace]
 resolver = "2"
-members = [
-    "ui",
-    "web",
-    "desktop",
-    "mobile",
-    "api",
-]
+members = ["ui", "web", "desktop", "api"]
 
 [workspace.dependencies]
 dioxus = { version = "0.6.0" }
